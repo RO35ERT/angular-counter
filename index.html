@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+   <div ng-app="myApp" ng-controller="myCtrl" class="container">
+        <h1>Counter</h1>
+        <div class="counter">
+            <button ng-click="add()" class="add">+</button>
+            <h3>{{counter}}</h3>
+            <button ng-click="sub()" class="subs">-</button>
+        </div>
+   </div>
+   
+   <script>
+    const app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.counter = 0;
+        $scope.add = ()=>{
+            return $scope.counter++;
+        }
+        $scope.sub = ()=>{
+            return $scope.counter--;
+        }
+    })
+   </script>
+</body>
+</html>
